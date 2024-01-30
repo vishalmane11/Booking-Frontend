@@ -10,11 +10,14 @@ export default function RegisterPage() {
     ev.preventDefault();
     console.log(name, email, password, "hhhh");
     try {
-      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/register`, {
-        name,
-        email,
-        password,
-      });
+      await axios.post(
+        `https://bookingbackend-tpuz.onrender.com/api/register`,
+        {
+          name,
+          email,
+          password,
+        }
+      );
       alert("Registration successful. Now you can log in");
     } catch (e) {
       alert("Registration failed. Please try again later");
