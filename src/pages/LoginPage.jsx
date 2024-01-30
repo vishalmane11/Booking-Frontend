@@ -12,7 +12,7 @@ export default function LoginPage() {
     ev.preventDefault();
     try {
       const { data } = await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL}/api/login`,
+        `https://bookingbackend-tpuz.onrender.com/api/login`,
         { email, password }
       );
       setUser(data);
