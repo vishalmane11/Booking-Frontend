@@ -14,7 +14,7 @@ export default function ProfilePage() {
   }
 
   async function logout() {
-    await axios.post("/logout");
+    await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/logout`);
     setRedirect("/");
     setUser(null);
   }

@@ -9,9 +9,11 @@ import BookingDates from "../BookingDates";
 export default function BookingsPage() {
   const [bookings, setBookings] = useState([]);
   useEffect(() => {
-    axios.get("/bookings").then((response) => {
-      setBookings(response.data);
-    });
+    axios
+      .get(`${import.meta.env.VITE_API_BASE_URL}/api/bookings`)
+      .then((response) => {
+        setBookings(response.data);
+      });
   }, []);
   return (
     <div>
