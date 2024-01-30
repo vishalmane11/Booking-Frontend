@@ -10,7 +10,7 @@ export function UserContextProvider({ children }) {
   useEffect(() => {
     if (!user) {
       axios
-        .get(`${import.meta.env.VITE_API_BASE_URL}/api/profile`)
+        .get(`https://bookingbackend-tpuz.onrender.com/api/profile`)
         .then(({ data }) => {
           setUser(data);
           setReady(true);

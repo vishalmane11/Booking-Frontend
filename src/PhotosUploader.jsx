@@ -6,9 +6,12 @@ export default function PhotosUploader({ addedPhotos, onChange }) {
   const [photoLink, setPhotoLink] = useState("");
   async function addPhotoByLink(ev) {
     ev.preventDefault();
-    const { data: filename } = await axios.post("/upload-by-link", {
-      link: photoLink,
-    });
+    const { data: filename } = await axios.post(
+      "https://bookingbackend-tpuz.onrender.com/upload-by-link",
+      {
+        link: photoLink,
+      }
+    );
     onChange((prev) => {
       return [...prev, filename];
     });
@@ -21,7 +24,7 @@ export default function PhotosUploader({ addedPhotos, onChange }) {
       data.append("photos", files[i]);
     }
     axios
-      .post(`${import.meta.env.VITE_API_BASE_URL}/api/upload`, data, {
+      .post(`https://bookingbackend-tpuz.onrender.com/api/upload`, data, {
         headers: { "Content-type": "multipart/form-data" },
       })
       .then((response) => {
