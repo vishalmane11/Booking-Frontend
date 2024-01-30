@@ -10,7 +10,7 @@ export default function RegisterPage() {
     ev.preventDefault();
     console.log(name, email, password, "hhhh");
     try {
-      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/register`, {
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/register`, {
         name,
         email,
         password,
