@@ -23,7 +23,7 @@ export default function PlacesFormPage() {
       return;
     }
     axios
-      .get(`${import.meta.env.VITE_API_BASE_URL}/places/` + id)
+      .get(`https://bookingbackend-tpuz.onrender.com/places/` + id)
       .then((response) => {
         const { data } = response;
         setTitle(data.title);
@@ -69,7 +69,7 @@ export default function PlacesFormPage() {
     };
     if (id) {
       // update
-      await axios.put(`${import.meta.env.VITE_API_BASE_URL}/api/places`, {
+      await axios.put(`https://bookingbackend-tpuz.onrender.com/places`, {
         id,
         ...placeData,
       });

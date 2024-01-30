@@ -7,7 +7,7 @@ export default function IndexPage() {
   const [places, setPlaces] = useState([]);
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_BASE_URL}/api/places`)
+      .get(`https://bookingbackend-tpuz.onrender.com/api/places`)
       .then((response) => {
         setPlaces(response.data);
       });

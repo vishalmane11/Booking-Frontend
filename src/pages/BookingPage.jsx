@@ -11,7 +11,7 @@ export default function BookingPage() {
   useEffect(() => {
     if (id) {
       axios
-        .get(`${import.meta.env.VITE_API_BASE_URL}/api/bookings`)
+        .get(`https://bookingbackend-tpuz.onrender.com/api/bookings`)
         .then((response) => {
           const foundBooking = response.data.find(({ _id }) => _id === id);
           if (foundBooking) {

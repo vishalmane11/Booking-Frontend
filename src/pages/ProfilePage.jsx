@@ -14,7 +14,7 @@ export default function ProfilePage() {
   }
 
   async function logout() {
-    await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/logout`);
+    await axios.post(`https://bookingbackend-tpuz.onrender.com/api/logout`);
     setRedirect("/");
     setUser(null);
   }

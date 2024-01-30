@@ -10,7 +10,7 @@ export default function BookingsPage() {
   const [bookings, setBookings] = useState([]);
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_BASE_URL}/api/bookings`)
+      .get(`https://bookingbackend-tpuz.onrender.com/api/bookings`)
       .then((response) => {
         setBookings(response.data);
       });
